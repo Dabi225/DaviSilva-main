@@ -1,0 +1,32 @@
+main{
+    padding: 10px;
+}
+form{
+    width: fit-content;
+    margin: auto;
+    background-color: rgb(156,194,156);
+    /*margin-top: 5px;*/
+    padding: 20px;
+    border-radius: 8px;
+}
+
+input {
+    font-size:14px;
+    min-width:200px;
+    padding: 5px;
+
+}
+
+button{
+    background-color: transparent;
+    border: 0.1px solid whitesmoke;
+    padding: 5px;
+    margin-top: 3px;
+    font-size: 15px;
+    border-radius: 5px;
+
+    &:hover{
+        background-color: aquamarine;
+    }
+
+}

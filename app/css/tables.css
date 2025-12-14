@@ -1,0 +1,23 @@
+table {
+    width: 80%;
+    margin: auto;
+    border: 0.2px solid #ce91ba;
+    border-collapse: collapse;
+    margin:5px;
+}
+tr, td{
+    border: 0.2px solid #ce91ba;
+    padding: 4px;
+}
+td:last-child{
+    background-color: red;
+    display:flex;
+    justify-content: center;
+    
+    button{
+        margin:3px;
+        background-color: transparent;
+        border: none;
+        color:#ce91ba;
+    }
+}

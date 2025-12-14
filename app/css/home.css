@@ -1,0 +1,21 @@
+
+.div-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    border: 1px solid black;
+    flex-direction: column;
+    font-family: "Anek+Devanagari";
+    background-image: url("/tec.jpg");
+    background-size: 100%;
+    
+    h1 {
+        /*font-size:150px*/
+        font-size: 2rem;
+    }
+    p{
+        color:red;
+    }
+}
+
