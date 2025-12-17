@@ -1,5 +1,7 @@
 import {compras } from '../../../database/tabelas/associação'
 import { redirect } from 'next/navigation';
+import '../../css/tables.css';
+
 
 async function CancelarCom(formData){
     "use server";

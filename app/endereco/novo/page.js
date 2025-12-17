@@ -1,5 +1,6 @@
 import { endereco } from "../../../database/tabelas/associação";
 import { redirect } from "next/navigation"
+import '../../css/tables.css';
 
 async function removeEndereco(formData){
     'use server';

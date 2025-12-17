@@ -1,5 +1,7 @@
 import {ItemCompra} from '../../../database/tabelas/associação';
 import {redirect} from 'next/navigation';
+import '../../css/tables.css';
+
 
 async function Remover(formData){
     'use server'

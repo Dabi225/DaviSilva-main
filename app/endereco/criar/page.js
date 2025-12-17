@@ -1,6 +1,6 @@
 import {endereco} from '../../../database/tabelas/associação';
 import {redirect} from 'next/navigation';
-import "../../css/tables.css";
+import "../../css/cadastro.css";
 
 function TelaNovoEndereco() {
     return (

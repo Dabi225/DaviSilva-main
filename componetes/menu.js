@@ -5,7 +5,7 @@ function Menu(){
         <>
         <nav>
             <div>
-                <h1>Produtos e mais</h1>
+                <h1>InterCell</h1>
             </div>
             <div>
                 <ul>

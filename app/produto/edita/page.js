@@ -1,5 +1,7 @@
 import { produto } from "../../../database/tabelas/associação";
 import { redirect } from "next/navigation";
+import "../../css/cadastro.css";
+
 
 async function editaProduto(formData) {
   "use server";

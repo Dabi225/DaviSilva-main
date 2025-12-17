@@ -1,6 +1,6 @@
 import {Cliente} from '../../../database/tabelas/associação.js';
 import {redirect} from 'next/navigation';
-import "../../css/tables.css";
+import "../../css/cadastro.css";
 
 function TelaNovoCliente() {
     return (

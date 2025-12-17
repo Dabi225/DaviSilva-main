@@ -1,5 +1,7 @@
 import {Pagamentos} from '../../../database/tabelas/associação';
 import {redirect} from 'next/navigation';
+import "../../css/cadastro.css";
+
 
 async function editaPagamento(formData){
     'use server'

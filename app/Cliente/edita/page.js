@@ -1,5 +1,7 @@
 import {Cliente} from "../../../database/tabelas/associação";
 import {redirect} from "next/navigation";
+import "../../css/cadastro.css";
+
 
 async function editaCliente(formData){
     "use server";

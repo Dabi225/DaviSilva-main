@@ -1,5 +1,6 @@
 import { Cliente } from "../../../database/tabelas/associação";
 import { redirect } from "next/navigation";
+import '../../css/tables.css';
 
 async function removeCliente(formData){
     'use server';

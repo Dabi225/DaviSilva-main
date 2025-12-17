@@ -1,5 +1,7 @@
 import {ItemCompra} from '../../../database/tabelas/associação'
 import {redirect} from 'next/navigation';
+import "../../css/cadastro.css";
+
 
 function TelaNovoICom(){
     return (

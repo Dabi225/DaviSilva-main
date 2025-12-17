@@ -1,5 +1,7 @@
 import { categoria } from "../../../database/tabelas/associação.js";
 import { redirect } from "next/navigation";
+import "../../css/cadastro.css";
+
 
 function TelaNovoCat(){
     return (
