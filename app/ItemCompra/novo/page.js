@@ -1,4 +1,4 @@
-import {ItemCompra} from '../../../database/tabelas/tab_ItemCompra';
+import {ItemCompra} from '../../../database/tabelas/associação';
 import {redirect} from 'next/navigation';
 
 async function Remover(formData){
@@ -51,6 +51,7 @@ async function itemcompra(){
                     }
                 </tbody>
             </table>
+            <a href="../pag/novo"> Voltar</a>
         </>
     )
 }

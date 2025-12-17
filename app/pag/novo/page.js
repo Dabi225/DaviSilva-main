@@ -1,9 +1,9 @@
-import { Pagamentos } from "../../../database/tabelas/tab_pagamento.js";
+import { Pagamentos } from "../../../database/tabelas/associação";
 import { redirect } from "next/navigation";
 
 async function Cancelamento(formData){
     'use server'
-    const id = FormData.get('id');
+    const id = formData.get('id');
     const pag = await Pagamentos.findByPk(id);
     await pag.destroy();
     redirect('/pag/novo');
@@ -15,7 +15,7 @@ async function Pagamento(){
     return(
         <>
             <h1>Pagamento</h1>
-            <a href='/pag/criar'>+ Colocar Novo Pagamento</a><br />
+            <a href='/pag/criar'>+ Nova Forma Pagamento</a><br />
             <a href='/ItemCompra/novo'> Verificar itens</a>
             <table border='1'>
                 <thead>
@@ -31,19 +31,19 @@ async function Pagamento(){
                     {
                         pag.map(function(pag){
                             return (
-                                <tr key={pag.id}>
-                                    <td>{pag.id}</td>
+                                <tr key={pag.id_pagamento}>
+                                    <td>{pag.id_pagamento}</td>
                                     <td>{pag.id_compra}</td>
                                     <td>{pag.status}</td>
                                     <td>{pag.parcelas}</td>
                                     <td>{pag.valor_total}</td>
                                     <td>
                                         <form action={'/pag/edita'}>
-                                            <input type='hidden' name='id' defaultValue={pag.id}/>
+                                            <input type='hidden' name='id' defaultValue={pag.id_pagamento}/>
                                             <button>Editar</button>
                                         </form>
                                         <form action={Cancelamento}>
-                                            <input type="hidden" name='id' defaultValue={pag.id}/>
+                                            <input type="hidden" name='id' defaultValue={pag.id_pagamento}/>
                                             <button>Cancelar</button>
                                         </form>
                                     </td>
@@ -53,6 +53,7 @@ async function Pagamento(){
                     }
                 </tbody>
             </table>
+            <a href='/compras/novo'>Voltar</a>
         </>
     )
 }

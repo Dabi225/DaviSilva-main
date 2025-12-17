@@ -1,4 +1,4 @@
-import { categoria } from "../../../database/tabelas/tab_categoria";
+import { categoria } from "../../../database/tabelas/associação.js";
 import { redirect } from "next/navigation";
 
 function TelaNovoCat(){

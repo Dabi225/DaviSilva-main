@@ -1,4 +1,4 @@
-import {produto} from '../../../database/tabelas/tab_produto';
+import {produto} from '../../../database/tabelas/associação';
 import {redirect} from 'next/navigation';
 import "../../css/cadastro.css";
 

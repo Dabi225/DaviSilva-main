@@ -1,6 +1,7 @@
-import { endereco } from "../../../database/tabelas/tab_endereco";
+import { endereco } from "../../../database/tabelas/associação";
+import { redirect } from "next/navigation"
 
-async function removeEndereco(){
+async function removeEndereco(formData){
     'use server';
     const id = formData.get('id');
     const end = await endereco.findByPk(id);
@@ -29,7 +30,7 @@ async function Endereco(){
                     {
                         end.map(function(end){
                             return (
-                                <tr key={end.id}>
+                                <tr key={end.id_endereco}>
                                     <td>{end.id_endereco}</td>
                                     <td>{end.rua}</td>
                                     <td>{end.bairro}</td>
@@ -37,11 +38,11 @@ async function Endereco(){
                                     <td>{end.Estado}</td>
                                     <td>
                                         <form action={'/endereco/edita/'}>
-                                            <input type='hidden' name='id' defaultValue={end.id}/>
+                                            <input type='hidden' name='id' defaultValue={end.id_endereco}/>
                                             <button>Editar</button>
                                         </form>
                                         <form action={removeEndereco}>
-                                            <input type='hidden' name='id' defaultValue={end.id}/><br />
+                                            <input type='hidden' name='id' defaultValue={end.id_endereco}/><br />
                                             <button>&#10006;</button>
                                         </form>
                                     </td>

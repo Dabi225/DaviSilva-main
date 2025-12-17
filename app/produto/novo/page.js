@@ -1,4 +1,4 @@
-import { produto } from "../../../database/tabelas/tab_produto";
+import { produto } from "../../../database/tabelas/associação";
 import {redirect} from 'next/navigation';
 import "../../css/tables.css"
 
@@ -32,19 +32,19 @@ async function Produtos(){
                     {
                         Produtos.map(function(prod){
                             return (
-                                <tr key={prod.id}>
-                                    <td>{prod.id}</td>
+                                <tr key={prod.id_produto}>
+                                    <td>{prod.id_produto}</td>
                                     <td>{prod.nome}</td>
                                     <td>{prod.id_categoria}</td>
                                     <td>{prod.preco_un}</td>
                                     <td>{prod.estoque}</td>
                                     <td>
                                         <form action={'/produto/edita/'}>
-                                            <input type='hidden' name='id' defaultValue={prod.id}/>
+                                            <input type='hidden' name='id' defaultValue={prod.id_produto}/>
                                             <button>Editar</button>     
                                         </form>
                                         <form action={removeProduto}>
-                                            <input type='hidden' name='id' defaultValue={prod.id}/><br />
+                                            <input type='hidden' name='id' defaultValue={prod.id_produto}/><br />
                                             <button>&#10006;</button>
                                         </form>
                                     </td>

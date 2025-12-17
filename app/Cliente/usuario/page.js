@@ -1,9 +1,10 @@
-import { Cliente } from "../../../database/tabelas/tab_cliente";
+import { Cliente } from "../../../database/tabelas/associação";
+import { redirect } from "next/navigation";
 
-async function removeCliente(){
+async function removeCliente(formData){
     'use server';
     const id = formData.get('id');
-    const cli = await produto.findByPk(id);
+    const cli = await Cliente.findByPk(id);
     await cli.destroy();
     redirect('/cliente/usuario');
 }
@@ -30,7 +31,7 @@ async function Clientes(){
                     {
                         cli.map(function(cli){
                             return (
-                                <tr key={cli.id}>
+                                <tr key={cli.id_cliente}>
                                     <td>{cli.id_cliente}</td>
                                     <td>{cli.nome}</td>
                                     <td>{cli.cpf}</td>
@@ -39,11 +40,11 @@ async function Clientes(){
                                     <td>{cli.telefone}</td>
                                     <td>
                                     <form action={'/Cliente/edita/'}>
-                                            <input type='hidden' name='id' defaultValue={cli.id}/>
+                                            <input type='hidden' name='id' defaultValue={cli.id_cliente}/>
                                             <button>Editar</button>     
                                         </form>
                                         <form action={removeCliente}>
-                                            <input type='hidden' name='id' defaultValue={cli.id}/><br />
+                                            <input type='hidden' name='id' defaultValue={cli.id_cliente}/><br />
                                             <button>&#10006;</button>
                                         </form>
                                     </td>

@@ -1,4 +1,4 @@
-import {endereco} from '../../../database/tabelas/tab_endereco.js';
+import {endereco} from '../../../database/tabelas/associação';
 import {redirect} from 'next/navigation';
 import "../../css/tables.css";
 

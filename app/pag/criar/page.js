@@ -1,4 +1,4 @@
-import {Pagamentos} from '../../../database/tabelas/tab_pagamento';
+import {Pagamentos} from '../../../database/tabelas/associação';
 import {redirect} from 'next/navigation';
 import "../../css/tables.css";
 
@@ -6,7 +6,7 @@ function TelaNovoPagamento() {
     return (
       <>
       <form action={inserePagamento}>
-        <label htmlFor='idcom'>Id do pagamento</label><br />
+        <label htmlFor='idcom'>Id da Compra</label><br />
         <input type='text' name='idcom'/> <br />
   
         <label htmlFor="status">Status</label><br />

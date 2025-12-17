@@ -1,9 +1,9 @@
-import { ItemCompra } from "../../../database/tabelas/tab_ItemCompra";
+import { ItemCompra } from "../../../database/tabelas/associação";
 import { redirect } from "next/navigation";
 
 async function editaItens(formData){
     'use server'
-    const id  = formData.get('id');
+    const id  = formData.get('id_itemcompra');
     const id_compra = formData.get('id_compra');
     const quantidade = formData.get('quantidade');
     const preco_un = formData.get('preco_un');
@@ -25,7 +25,7 @@ async function TelaEditaItens({searchParams}){
     return(
         <>
             <form action={editaItens}>
-                <input type='hidden' name='id' defaultValue={Itens.id}/>
+                <input type='hidden' name='id' defaultValue={Itens.id_itemcompra}/>
 
                 <label htmlFor="id_compra">ID da Compra</label>
                 <input type="number" name="id_compra" defaultValue={Itens.id_compra}/> <br />

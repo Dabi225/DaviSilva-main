@@ -1,17 +1,17 @@
-import {Pagamentos} from '../../../database/tabelas/tab_pagamento';
+import {Pagamentos} from '../../../database/tabelas/associação';
 import {redirect} from 'next/navigation';
 
 async function editaPagamento(formData){
     'use server'
-    const id= formData.get('id');
-    const idcom= formData.get('idcom');
+    const id= formData.get('id_pagamento');
+    const idcom= formData.get('id_compra');
     const status= formData.get('status');
     const parcelas= formData.get('parcelas');
     const valor_total= formData.get('valor-total');
 
     const pag = await Pagamentos.findByPk(id);
 
-    pag.idcom=idcom;
+    pag.id_compra=idcom;
     pag.status=status;
     pag.parcelas=parcelas;
     pag.valor_total=valor_total;
@@ -27,7 +27,7 @@ async function TelaEditaPagamento({searchParams}) {
     return (
       <>
       <form action={editaPagamento}>
-        <input type='hidden' name='id' defaultValue={pag.id}/>
+        <input type='hidden' name='id' defaultValue={pag.id_pagemento}/>
 
         <label htmlFor='idcom'>Id do pagamento</label><br />
         <input type='text' name='idcom' defaultValue={pag.idcom}/> <br />

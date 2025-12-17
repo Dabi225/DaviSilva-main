@@ -1,4 +1,4 @@
-import { categoria } from '../../../database/tabelas/tab_categoria';
+import { categoria } from '../../../database/tabelas/associação.js';
 import { redirect } from 'next/navigation';
 
 async function removeCat(formData){
@@ -6,7 +6,7 @@ async function removeCat(formData){
     const id = formData.get('id');
     const cat =  await categoria.findByPk(id);
     await cat.destroy();
-    redirect('Categoria/novo');
+    redirect('/Categoria/novo');
 }
 
 async function Categoria(){
@@ -15,7 +15,7 @@ async function Categoria(){
     return(
         <>
             <h1>Categorias</h1>
-            <a href='Categoria/criar'>+ Colocar nova categoria</a>
+            <a href='/Categoria/criar'>+ Colocar nova categoria</a>
             <table>
                 <thead>
                     <tr>
@@ -32,7 +32,7 @@ async function Categoria(){
                                     <td>{cat.categoria}</td>
                                     <td>
                                         <form action={removeCat}>
-                                            <input type= 'hidden' name='id' defaultValue={cat.id}/>
+                                            <input type= 'hidden' name='id' defaultValue={cat.id_categoria}/>
                                             <button>Remover</button>
                                         </form>
                                     </td>

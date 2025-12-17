@@ -1,4 +1,4 @@
-import {Cliente} from '../../../database/tabelas/tab_cliente.js';
+import {Cliente} from '../../../database/tabelas/associação.js';
 import {redirect} from 'next/navigation';
 import "../../css/tables.css";
 

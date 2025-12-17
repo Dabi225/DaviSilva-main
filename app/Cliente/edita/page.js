@@ -1,4 +1,4 @@
-import {Cliente} from "../../../database/tabelas/tab_cliente";
+import {Cliente} from "../../../database/tabelas/associação";
 import {redirect} from "next/navigation";
 
 async function editaCliente(formData){
@@ -24,7 +24,7 @@ async function TelaEditaCliente({ searchParams }){
     return(
         <>
         <form action={editaCliente}>
-            <input type="hidden" name="id" defaultValue={cliente.id} />
+            <input type="hidden" name="id" defaultValue={cliente.id_cliente} />
             <label htmlFor="nome">Nome</label><br />
             <input type="text" name="nome" defaultValue={cliente.nome} /><br />
             <label htmlFor="email">Email</label>
